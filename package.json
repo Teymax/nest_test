@@ -5,7 +5,7 @@
   "author": "",
   "private": true,
   "license": "UNLICENSED",
-  "main": "dist/index.js",
+  "main": "src/index.ts",
   "engines": {
     "node": "13"
   },
@@ -77,5 +77,9 @@
     ],
     "coverageDirectory": "../coverage",
     "testEnvironment": "node"
-  }
+  },
+  entities: [
+    __dirname + '/**/*.entity.{js,ts}',
+    __dirname + '/**/entities/*.entity.{js,ts}',
+  ]
 }
