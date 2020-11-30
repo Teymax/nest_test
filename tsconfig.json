@@ -1,9 +1,6 @@
 {
   "compilerOptions": {
     "module": "commonjs",
-    "noImplicitReturns": true,
-    "strict": false,
-    "noUnusedLocals": true,
     "declaration": true,
     "removeComments": true,
     "emitDecoratorMetadata": true,
@@ -12,11 +9,7 @@
     "target": "es2017",
     "sourceMap": true,
     "outDir": "./dist",
-    "esModuleInterop": true,
+    "baseUrl": "./",
     "incremental": true
-  },
-  "compileOnSave": true,
-  "include": [
-    "src"
-  ]
+  }
 }

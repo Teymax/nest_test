@@ -77,9 +77,5 @@
     ],
     "coverageDirectory": "../coverage",
     "testEnvironment": "node"
-  },
-  entities: [
-    __dirname + '/**/*.entity.{js,ts}',
-    __dirname + '/**/entities/*.entity.{js,ts}',
-  ]
+  }
 }
