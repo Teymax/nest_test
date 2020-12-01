@@ -1,12 +1,16 @@
-import { Entity, PrimaryGeneratedColumn, Column, UpdateDateColumn, CreateDateColumn } from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, Column, UpdateDateColumn, CreateDateColumn, BeforeInsert } from 'typeorm';
+import bcrypt from 'bcrypt';
 
 @Entity()
-export class UserEntity {
+export class User {
     @PrimaryGeneratedColumn('uuid')
     id: string;
 
-    @Column({ type: 'varchar', nullable: false })
+    @Column({ type: 'varchar', nullable: false, unique: true })
     username: string;
+
+    @Column({ type: 'varchar', nullable: false })
+    password: string;
 
     @Column({ type: 'varchar', nullable: false })
     firstName: string;
@@ -28,4 +32,8 @@ export class UserEntity {
 
     @UpdateDateColumn({ type: 'timestamptz', default: () => 'CURRENT_TIMESTAMP' })
     lastChangedDateTime: Date;
+
+    @BeforeInsert()  async hashPassword() {
+        this.password = await bcrypt.hash(this.password, 10);
+    }
 }

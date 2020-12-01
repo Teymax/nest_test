@@ -1,14 +1,14 @@
 import { Entity, PrimaryGeneratedColumn, Column, UpdateDateColumn, CreateDateColumn, OneToOne, JoinColumn } from 'typeorm';
-import { UserEntity } from "../../users/entities/user.entity"
+import { User } from "../../users/entities/user.entity"
 
 @Entity()
-export  class TermsEntity {
+export  class Terms {
     @PrimaryGeneratedColumn('uuid')
     id: string;
 
-    @OneToOne(()=> UserEntity)
+    @OneToOne(()=> User)
     @JoinColumn()
-    userId:UserEntity;
+    userId:User;
 
     @Column({ type: 'bigint', nullable: false })
     version: bigint;
