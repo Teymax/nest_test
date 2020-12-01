@@ -7,10 +7,11 @@ const database = process.env.POSTGRES_DATABASE || "postgres";
 
 module.exports = {
     "type": "postgres",
-    host,
+    "host": host,
     "port": 5432,
-    username, password,
-    database,
+    "username": username,
+    "password": password,
+    "database": database,
     "synchronize": true,
     "dropSchema": false,
     "logging": true,
